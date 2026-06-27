@@ -2,7 +2,7 @@ param(
     [switch]$Docker
 )
 
-Set-Location "C:\Users\ABU HURERA NOOR\Desktop\StreamLit_project"
+Set-Location $PSScriptRoot
 
 if ($Docker) {
     Set-Location ".\fastapi_backend"

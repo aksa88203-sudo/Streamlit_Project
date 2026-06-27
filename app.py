@@ -21,14 +21,14 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap');
     :root {
-        --bg-1: #0b0f16;
-        --bg-2: #0f172a;
-        --card: rgba(255, 255, 255, 0.06);
-        --card-strong: rgba(255, 255, 255, 0.09);
-        --stroke: rgba(255, 255, 255, 0.08);
-        --text: #e5e7eb;
-        --muted: #9aa4b2;
-        --accent: #22d3ee;
+        --bg-1: #f8fafc;
+        --bg-2: #eef4ff;
+        --card: rgba(255, 255, 255, 0.88);
+        --card-strong: #ffffff;
+        --stroke: rgba(148, 163, 184, 0.28);
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #0ea5e9;
         --good: #10b981;
         --warn: #f59e0b;
         --bad: #ef4444;
@@ -38,7 +38,9 @@ st.markdown("""
         color: var(--text);
     }
     .stApp {
-        background: radial-gradient(1200px 700px at 10% -10%, #1f2937 0%, var(--bg-1) 55%, var(--bg-2) 100%);
+        background:
+            radial-gradient(900px 500px at 0% 0%, rgba(14, 165, 233, 0.10), transparent 55%),
+            linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
     }
     .block-container {
         padding-top: 1.25rem;
@@ -68,7 +70,7 @@ st.markdown("""
         border-radius: 14px;
         padding: 12px 16px;
         margin-bottom: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
     }
     .brand {
         font-size: 22px;
@@ -90,8 +92,8 @@ st.markdown("""
         padding: 0 16px;
     }
     .stButton>button:hover {
-        border-color: rgba(255,255,255,0.18);
-        background: rgba(255,255,255,0.12);
+        border-color: rgba(14, 165, 233, 0.30);
+        background: #f8fbff;
     }
     /* Tabs */
     div[data-testid="stTabs"] {
@@ -99,7 +101,7 @@ st.markdown("""
         border: 1px solid var(--stroke);
         border-radius: 14px;
         padding: 6px 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
     }
     button[data-baseweb="tab"] {
         background: transparent;
@@ -108,8 +110,8 @@ st.markdown("""
         border-radius: 10px;
     }
     button[data-baseweb="tab"][aria-selected="true"] {
-        background: rgba(34, 211, 238, 0.12);
-        color: #c7f9ff;
+        background: rgba(14, 165, 233, 0.12);
+        color: #0369a1;
     }
     /* Cards */
     .card {
@@ -117,15 +119,15 @@ st.markdown("""
         border: 1px solid var(--stroke);
         border-radius: 16px;
         padding: 14px 16px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
     }
     .product-card {
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .product-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 16px 30px rgba(0,0,0,0.35);
-        border-color: rgba(34, 211, 238, 0.4);
+        box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
+        border-color: rgba(14, 165, 233, 0.35);
     }
     .login-card {
         background: transparent;
@@ -136,7 +138,7 @@ st.markdown("""
     .stat-value {
         font-size: 28px;
         font-weight: 700;
-        color: #ffffff;
+        color: #0f172a;
     }
     .stat-label {
         color: var(--muted);
@@ -150,8 +152,8 @@ st.markdown("""
         border-radius: 999px;
         font-size: 12px;
         font-weight: 600;
-        color: #0b0f16;
-        background: #e5e7eb;
+        color: #0f172a;
+        background: #e2e8f0;
     }
     .pill.good { background: #d1fae5; color: #065f46; }
     .pill.warn { background: #fef3c7; color: #92400e; }
@@ -181,24 +183,105 @@ st.markdown("""
         margin: 8px 0;
     }
     .auth-shell {
-        background: rgba(15, 23, 42, 0.72);
+        background: rgba(255, 255, 255, 0.90);
         border: 1px solid var(--stroke);
-        border-radius: 16px;
-        padding: 16px;
-        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 20px 44px rgba(15, 23, 42, 0.16);
+        backdrop-filter: blur(10px);
     }
     .hero-shell {
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        min-height: auto;
+        background:
+            linear-gradient(180deg, rgba(15, 23, 42, 0.20), rgba(15, 23, 42, 0.48)),
+            url("https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80");
+        background-size: cover;
+        background-position: center;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 28px;
+        padding: 28px;
+        min-height: 520px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);
     }
     .hero-kpi {
         font-size: 22px;
         font-weight: 700;
-        color: #f8fafc;
+        color: #ffffff;
         margin-top: 8px;
+    }
+    .hero-title,
+    .hero-copy,
+    .hero-shell p,
+    .hero-shell h3 {
+        color: #ffffff !important;
+    }
+    .hero-title {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.05;
+        margin-bottom: 12px;
+    }
+    .hero-copy {
+        max-width: 520px;
+        color: rgba(255, 255, 255, 0.92) !important;
+        font-size: 16px;
+    }
+    .login-heading {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .login-kicker {
+        color: #0369a1;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .login-note {
+        color: #64748b;
+        text-align: center;
+        margin-top: 8px;
+    }
+    .ai-panel {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+    }
+    .ai-result {
+        background: #f8fbff;
+        border: 1px solid rgba(14, 165, 233, 0.18);
+        border-radius: 18px;
+        padding: 18px;
+    }
+    .ai-chip {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #e0f2fe;
+        color: #075985;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    div[data-testid="stTextInput"] input {
+        background: #ffffff;
+        color: #0f172a;
+        border-radius: 12px;
+    }
+    div[data-testid="stTextArea"] textarea {
+        background: #ffffff;
+        color: #0f172a;
+        border-radius: 12px;
+    }
+    div[data-testid="stTextInput"] label p,
+    .stMarkdown,
+    .stCaption {
+        color: var(--text);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -342,16 +425,40 @@ def get_sample_sales():
 
 # Authentication
 def login_page():
-    st.markdown("<h1 style='text-align: center;'>Inventory Prediction System</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center;'>Professional inventory operations for modern teams.</p>", unsafe_allow_html=True)
+    st.markdown(
+        """
+        <style>
+            .stApp {
+                background:
+                    linear-gradient(180deg, rgba(248, 250, 252, 0.72), rgba(239, 246, 255, 0.82)),
+                    url("https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1600&q=80");
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        """
+        <div class='login-heading'>
+            <div class='login-kicker'>Welcome Back</div>
+            <h1>Inventory Prediction System</h1>
+            <p>Manage products, sales, and alerts from one clean workspace.</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     col1, col2 = st.columns([1.2, 1])
     with col1:
         st.markdown("<div class='hero-shell'>", unsafe_allow_html=True)
-        hero_image_url = "https://tse3.mm.bing.net/th/id/OIP.IiNMpWq2sC2--3lQZYQypQHaDt?rs=1&pid=ImgDetMain&o=7&rm=3"
-        st.image(hero_image_url, use_container_width=True)
-        st.markdown("### Unified Inventory Control")
-        st.markdown("Track stock, monitor sales, and spot risk alerts from one professional workspace.")
+        st.markdown("<div class='hero-title'>Smarter inventory decisions start here.</div>", unsafe_allow_html=True)
+        st.markdown(
+            "<div class='hero-copy'>Track stock levels, review sales activity, and spot reorder risks with a clearer, faster dashboard built for daily operations.</div>",
+            unsafe_allow_html=True,
+        )
         m1, m2, m3 = st.columns(3)
         m1.markdown("<div class='hero-kpi'>99.9%</div><p>Data Visibility</p>", unsafe_allow_html=True)
         m2.markdown("<div class='hero-kpi'>24/7</div><p>Monitoring</p>", unsafe_allow_html=True)
@@ -389,7 +496,7 @@ def login_page():
                             st.session_state.username = result.get("user", {}).get("email", email)
                             refresh_backend_data(show_errors=False)
                             st.rerun()
-            st.caption("Default account: admin / admin")
+            st.markdown("<div class='login-note'>Default account: <strong>admin / admin</strong></div>", unsafe_allow_html=True)
         else:
             with st.form("register_form"):
                 new_email = st.text_input("Email", placeholder="name@company.com")
@@ -864,11 +971,15 @@ def alerts_page():
     # Calculate average daily sales per product
     if sales_df.empty or 'date' not in sales_df.columns:
         st.info("Add sales data to generate predictions.")
+        st.divider()
+        ai_suite_page()
         return
     sales_df['date'] = pd.to_datetime(sales_df['date'], errors='coerce')
     sales_df = sales_df.dropna(subset=['date'])
     if sales_df.empty:
         st.info("Add valid sales dates to generate predictions.")
+        st.divider()
+        ai_suite_page()
         return
     days_range = (sales_df['date'].max() - sales_df['date'].min()).days + 1
 
@@ -883,6 +994,71 @@ def alerts_page():
                 st.warning(f"**{product['name']}**: At current sales rate, will need reorder in ~{int(days_until_reorder)} days")
             elif days_until_reorder < 0:
                 st.error(f"**{product['name']}**: Already below reorder level!")
+
+    st.divider()
+    ai_suite_page()
+
+
+def run_ai_insight(focus, question=None):
+    payload = {"focus": focus}
+    if question:
+        payload["question"] = question
+    return api_request("POST", "/ai/insights", payload=payload, show_errors=True)
+
+
+def ai_suite_page():
+    st.markdown("## AI Suite")
+    st.caption("Smart inventory guidance powered by your current inventory and sales data.")
+
+    if "ai_suite_result" not in st.session_state:
+        st.session_state.ai_suite_result = None
+
+    col1, col2 = st.columns([1.05, 1.2])
+
+    with col1:
+        st.markdown("<div class='ai-panel'>", unsafe_allow_html=True)
+        st.markdown("### Quick Insights")
+        st.caption("Generate overview, reorder advice, sales coaching, or ask a custom AI question.")
+
+        if st.button("Generate Executive Overview", use_container_width=True):
+            st.session_state.ai_suite_result = run_ai_insight("overview")
+
+        if st.button("Generate Reorder Advice", use_container_width=True):
+            st.session_state.ai_suite_result = run_ai_insight("reorder")
+
+        if st.button("Generate Sales Coaching", use_container_width=True):
+            st.session_state.ai_suite_result = run_ai_insight("sales")
+
+        st.markdown("### Ask Custom Question")
+        custom_question = st.text_area(
+            "Ask AI about your inventory",
+            placeholder="Example: Which products should I restock first this week and why?",
+            height=120,
+            key="ai_suite_question",
+            label_visibility="collapsed",
+        )
+
+        if st.button("Ask AI", use_container_width=True, type="primary"):
+            if custom_question.strip():
+                st.session_state.ai_suite_result = run_ai_insight("custom", question=custom_question.strip())
+            else:
+                st.warning("Please enter a question first.")
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("<div class='ai-panel'>", unsafe_allow_html=True)
+        st.markdown("### AI Response")
+        result = st.session_state.ai_suite_result
+        if not result:
+            st.info("Generate an AI insight to restore your AI Suite panel.")
+        else:
+            source = result.get("source", "unknown")
+            model = result.get("model", "unknown")
+            st.markdown(f"<div class='ai-chip'>{source.upper()} | {model}</div>", unsafe_allow_html=True)
+            st.markdown("<div class='ai-result'>", unsafe_allow_html=True)
+            st.markdown(result.get("content", "No response available."))
+            st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
 # Main app
 def main():

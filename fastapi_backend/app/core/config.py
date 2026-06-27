@@ -27,6 +27,8 @@ class Settings(BaseSettings):
     MYSQL_CHARSET: str = "utf8mb4"
 
     DATABASE_URL: str | None = None
+    GEMINI_API_KEY: str | None = None
+    GEMINI_MODEL: str = "gemini-2.5-flash"
 
     @computed_field  # type: ignore[prop-decorator]
     @property

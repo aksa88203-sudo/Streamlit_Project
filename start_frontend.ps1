@@ -1,4 +1,4 @@
-Set-Location "C:\Users\ABU HURERA NOOR\Desktop\StreamLit_project"
+Set-Location $PSScriptRoot
 
 if (Test-Path ".\venv\Scripts\Activate.ps1") {
     . .\venv\Scripts\Activate.ps1

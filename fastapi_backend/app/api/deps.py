@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.db.session import get_db
 from app.services.analytics import AnalyticsService
+from app.services.ai_suite import AISuiteService
 from app.services.auth import AuthService
 from app.services.item import ItemService
 from app.services.product import ProductService
@@ -27,3 +28,7 @@ def get_sale_service(db: Session = Depends(get_db)) -> SaleService:
 
 def get_analytics_service(db: Session = Depends(get_db)) -> AnalyticsService:
     return AnalyticsService(db)
+
+
+def get_ai_suite_service(db: Session = Depends(get_db)) -> AISuiteService:
+    return AISuiteService(db)
